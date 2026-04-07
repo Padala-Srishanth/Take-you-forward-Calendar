@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #eceff3;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Spiral binding styling */
+.spiral {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(0, 1fr));
+  gap: 6px;
+  padding: 0 14px;
+  height: 22px;
+  align-items: center;
+}
+.spiral span {
+  display: block;
+  height: 22px;
+  width: 10px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #cfd6df 0%, #8a93a0 50%, #525a66 100%);
+  box-shadow: inset 0 -2px 2px rgba(0,0,0,0.25), 0 1px 1px rgba(0,0,0,0.15);
+}
+
+.paper {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+}
+
+.notes-line {
+  background-image: linear-gradient(to bottom, transparent 95%, #cbd5e1 95%);
+  background-size: 100% 28px;
+  line-height: 28px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-flip, .animate-fade { animation: none !important; }
+}
